@@ -1,12 +1,12 @@
 public class Main {
      public static void main(String[] args) {
-         Calculator calc = new Calculator();
-         System.out.println(
-                 calc.newFormula()
-                         .addOperand(5)
-                         .addOperand(15)
-                         .calculate(Calculator.Operation.MULT)
-                         .result()
-         );
+
+         Ints calc = new IntsCalculator();
+         System.out.println(calc.sum(2,2).result);
+         System.out.println(calc.mult(22,32).result);
+         System.out.println(calc.mult(10,20).result);
+
+
+
     }
 }

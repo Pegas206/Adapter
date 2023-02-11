@@ -5,21 +5,27 @@
         public IntsCalculator() { this.target = new Calculator(); }
 
         @Override
-        public int sum(int arg0, int arg1) {
-            //считаем через target
-            return arg0;
+        public Calculator.Formula sum(int arg0, int arg1) {
+            return this.target.newFormula()
+                         .addOperand(arg0)
+                       .addOperand(arg1)
+                        .calculate(Calculator.Operation.SUM);
         }
 
         @Override
-        public int mult(int arg0, int arg1) {
-            //считаем через target
-            return arg0;
+        public Calculator.Formula mult(int arg0, int arg1) {
+            return this.target.newFormula()
+                    .addOperand(arg0)
+                    .addOperand(arg1)
+                    .calculate(Calculator.Operation.MULT);
         }
 
         @Override
-        public int pow(int a, int b) {
-            //считаем через target
-            return a;
+        public Calculator.Formula pow(int a, int b) {
+            return this.target.newFormula()
+                    .addOperand(a)
+                    .addOperand(b)
+                    .calculate(Calculator.Operation.POW);
         }
     }
 
